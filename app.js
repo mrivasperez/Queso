@@ -131,7 +131,7 @@ var UIController = (function() {
 
 
 // GLOBAL APP CONTROLLER MODULE - CENTRAL PLACE WHERE EVENTS ARE DELEGATED
-var controller = (function(budgetCrl, UICtrl){
+var controller = (function(budgetCtrl, UICtrl){
     //function for all event listeners
     var setupEventListeners = function(){
 
@@ -160,7 +160,7 @@ var controller = (function(budgetCrl, UICtrl){
         newItem = budgetCtrl.addItem(input.type, input.description, input.value);
 
         // 3. Add the new item to the UI
-
+        UICtrl.addListItem(newItem, input.type);
         // 4. Calculate the budget
 
         // 5. Display the budget on the UI
