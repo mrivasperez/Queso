@@ -42,18 +42,23 @@ var budgetController = (function() {
     return {
         addItem: function(type, des, val) {
             var newItem, ID;
+
             //create new ID = previous ID + 1
             ID = data.allItems[type][data.allItems[type].length - 1].id +1;
+
             //create new item based on type
             //if expense
             if (type === 'exp'){
                 newItem = new Expense(ID, des, val);
+
             //if income
             } else if (type === 'inc'){
                 newItem = new Income(ID, des, val);
-            }
-            //push to allItems array in the data object created above
+            };
+
+            //push newItem to allItems array in the data object created above
             data.allItems[type].push(newItem);
+
             //return new element
             return newItem;
 
@@ -114,11 +119,12 @@ var controller = (function(budgetCrl, UICtrl){
 
     //Code to run when click or key event listeners are triggered
     var ctrlAddItem = function(){
+        var input, newItem;
         //1. get field input data
-
-        var input = UICtrl.getInput();
+        input = UICtrl.getInput();
 
         // 2. Add the item to the budget controller
+        newItem = budgetCtrl.addItem(input.type, input.description, input.value);
 
         // 3. Add the new item to the UI
 
