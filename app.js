@@ -8,10 +8,58 @@
 
 //creating modules in js
 //each module does one thing completely independent from one another.
-//BUDGET CONTROLLER MODULE
+//BUDGET CONTROLLER MODULE - keeps track of income, expenses, and percentages
 var budgetController = (function() {
 
-    //code
+    //data model for expenses and income
+    //function constructor for expense
+    var Expense = function(id, description, value) {
+        this.id = id;
+        this. description = description;
+        this.value = value;
+    };
+
+    //function constructo for income
+    var Income = function(id, description, value) {
+        this.id = id;
+        this. description = description;
+        this.value = value;
+    };
+
+
+    //best data structure to maintain items is a an object with an object with two arrays
+    var data = {
+        allItems: {
+            exp: [],
+            inc: []
+        },
+        totals: {
+            exp: 0,
+            inc: 0
+        }
+    };
+    //add a new item based on type
+    return {
+        addItem: function(type, des, val) {
+            var newItem, ID;
+            //create new ID = previous ID + 1
+            ID = data.allItems[type][data.allItems[type].length - 1].id +1;
+            //create new item based on type
+            //if expense
+            if (type === 'exp'){
+                newItem = new Expense(ID, des, val);
+            //if income
+            } else if (type === 'inc'){
+                newItem = new Income(ID, des, val);
+            }
+            //push to allItems array in the data object created above
+            data.allItems[type].push(newItem);
+            //return new element
+            return newItem;
+
+        }
+    };
+
 
 })();
 
