@@ -95,6 +95,11 @@ var UIController = (function() {
                 value: document.querySelector(DOMstrings.inputValue).value
             };
         },
+
+        addListItem: function(obj, type){
+            
+        },
+
         getDOMstrings: function(){
             return DOMstrings;
         }
