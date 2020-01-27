@@ -97,7 +97,11 @@ var UIController = (function() {
         },
 
         addListItem: function(obj, type){
-            
+            // 1 create html string w/ placeholder text
+
+            // 2 replace placeholder text with actual data
+
+            // 3 insert the html indo the DOM
         },
 
         getDOMstrings: function(){
