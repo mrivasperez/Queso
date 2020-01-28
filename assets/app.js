@@ -115,12 +115,23 @@ var UIController = (function() {
             newHTML = newHTML.replace('%description%', obj.description);
             newHTML = newHTML.replace('%value%', obj.value);
 
-
             // 3 insert the html indo the DOM
              //add to income list
             document.querySelector(element).insertAdjacentHTML('beforeend', newHTML);
+        },
 
-
+        //method to clear input field
+        clearFields: function () {
+            var fields, fieldsArr;
+            //get a list of current fields
+            fields = document.querySelectorAll(DOMstrings.inputDescription +', ' + DOMstrings.inputValue);
+            //make an array out of the fields list 
+            fieldsArr = Array.prototype.slice.call(fields);
+            //use for each method in array to loop over elements in fields array and set value to an empty string
+            fieldsArr.forEach(function(current, index, array){
+                current.value = "";
+            });
+            fieldsArr[0].focus();
         },
 
         getDOMstrings: function(){
@@ -161,6 +172,9 @@ var controller = (function(budgetCtrl, UICtrl){
 
         // 3. Add the new item to the UI
         UICtrl.addListItem(newItem, input.type);
+        // 4. clear the field
+        UICtrl.clearFields();
+
         // 4. Calculate the budget
 
         // 5. Display the budget on the UI
