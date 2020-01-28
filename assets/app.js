@@ -86,7 +86,7 @@ var budgetController = (function() {
             //calculate the budget: income - expenses
             data.budget = data.totals.inc - data.totals.exp;
             // calculate the percentage of income that we spent
-
+            data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100);
         },
 
     };
