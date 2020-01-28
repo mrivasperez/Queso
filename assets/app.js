@@ -78,7 +78,7 @@ var budgetController = (function() {
             //return new element
             return newItem;
         },
-
+        //public function to get budget totals, difference, and percentages
         calculateBudget: function(){
             // calculate total income and expenses
             calculateTotal('exp');
@@ -86,7 +86,22 @@ var budgetController = (function() {
             //calculate the budget: income - expenses
             data.budget = data.totals.inc - data.totals.exp;
             // calculate the percentage of income that we spent
-            data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100);
+            // I used an if statement here to make sure that calculation is only made when total income is greater than 0
+            if(data.totals.inc > 0){
+                data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100);
+            } else {
+                data.percentage = -1;
+            };
+        },
+
+        // public function to retrieve budget, inc/exp, and % from data
+        getBudget: function(){
+            return {
+                budget: data.budget,
+                totalInc: data.totals.inc,
+                totalExp: data.totals.exp,
+                percentage: data.percentage
+            }
         },
 
     };
@@ -182,11 +197,11 @@ var controller = (function(budgetCtrl, UICtrl){
     //update budget function
     var updateBudget = function(){
         // calculate the budget
-
+        budgetCtrl.calculateBudget();
         // return the budget
-
+        var budget = budgetCtrl.getBudget();
         // display the budget on the UI
-
+        console.log(budget);
     };
 
     //Code to run when click or key event listeners are triggered
