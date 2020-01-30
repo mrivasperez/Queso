@@ -174,8 +174,10 @@ var UIController = (function() {
         displayBudget: function(obj){
             if (obj.budget > 0) {
                 document.querySelector(DOMstrings.budgetLabel).textContent = '+ ' + obj.budget;
-            } else {
+            } else if(obj.budget < 0) {
                 document.querySelector(DOMstrings.budgetLabel).textContent = '- ' + obj.budget;
+            } else {
+                document.querySelector(DOMstrings.budgetLabel).textContent = obj.budget;
             };
  
             document.querySelector(DOMstrings.incomeLabel).textContent = '+ ' + obj.totalInc;
