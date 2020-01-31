@@ -138,6 +138,7 @@ var UIController = (function() {
         budgetLabel: '.budget__value',
         incomeLabel: '.budget__income--value',
         expensesLabel: '.budget__expenses--value',
+        expensesPercLabel: '.item__percentage',
         percentageLabel: '.budget__expenses--percentage',
         container: '.container'
     };
@@ -198,9 +199,9 @@ var UIController = (function() {
         //display the budget via DOM manipulation
         displayBudget: function(obj){
             if (obj.budget > 0) {
-                document.querySelector(DOMstrings.budgetLabel).textContent = '+ ' + obj.budget;
+                document.querySelector(DOMstrings.budgetLabel).textContent = obj.budget;
             } else if(obj.budget < 0) {
-                document.querySelector(DOMstrings.budgetLabel).textContent = '- ' + obj.budget;
+                document.querySelector(DOMstrings.budgetLabel).textContent = obj.budget;
             } else {
                 document.querySelector(DOMstrings.budgetLabel).textContent = obj.budget;
             };
@@ -285,6 +286,7 @@ var controller = (function(budgetCtrl, UICtrl){
             //split up id using split
             splitID = itemID.split('-');
             type = splitID[0];
+            //convert number from string to integer!
             ID = parseInt(splitID[1]);
             // delete the item from the data structure
             budgetCtrl.deleteItem(type, ID)
