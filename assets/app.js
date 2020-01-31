@@ -252,8 +252,10 @@ var controller = (function(budgetCtrl, UICtrl){
     };
 
     var ctrlDeleteItem = function(event) {
+        var itemID;
+        //get id of item clicked
+        itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
 
-        
 
     };
 
