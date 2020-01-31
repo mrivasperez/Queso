@@ -256,6 +256,10 @@ var controller = (function(budgetCtrl, UICtrl){
         //get id of item clicked
         itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
 
+        //if itemID exist then...
+        if(itemID) {
+            ;
+        }
 
     };
 
