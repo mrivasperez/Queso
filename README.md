@@ -20,3 +20,6 @@ To add an income item, ensure the + button is selected in the drop down section 
 To add an expense item, ensure the - button is selected in the drop down section the form, then type a description for the expense item. Afterwards type the value for the expense and press the enter key on your keyboard or click on the green checkbox on the form..
 ### How to delete items
 To delete an expense or income item, hover over the item you wish to delete and press the green x that appears to the right of the item amount.
+
+## Stuff I'm working on for this
+- Fixing percentage label bug
