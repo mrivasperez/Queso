@@ -163,7 +163,7 @@ var UIController = (function() {
                 html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
             } else if (type === 'exp'){
                 element = DOMstrings.expensesContainer;
-                html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
             }
 
             // 2 replace placeholder text with actual data
@@ -209,11 +209,7 @@ var UIController = (function() {
             document.querySelector(DOMstrings.incomeLabel).textContent = '+ ' + obj.totalInc;
             document.querySelector(DOMstrings.expensesLabel).textContent = '- ' + obj.totalExp;
             //only show percentage if percentage is > 0
-            if(obj.percentage > 0 ) {
-                document.querySelector(DOMstrings.percentageLabel).textContent = obj.percentage + '%';
-            } else {
-                document.querySelector(DOMstrings.percentageLabel).textContent = '-';
-            };
+            
 
 
 
@@ -316,4 +312,4 @@ var controller = (function(budgetCtrl, UICtrl){
 })(budgetController, UIController);
 
 //start the application
-controller.init()
+controller.init();
