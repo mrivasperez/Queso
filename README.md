@@ -1,4 +1,4 @@
-# Queso [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]
+# Queso ![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)
  A budgetting app I haven't finished.
  by mrivasperez live demo <https://mrivasperez.github.io/Queso/>
 
