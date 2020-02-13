@@ -1,5 +1,5 @@
 # Queso ![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)
- A budgetting app I haven't finished.
+ A budgetting app.
  by mrivasperez live demo <https://mrivasperez.github.io/Queso/>
 
 ## About
